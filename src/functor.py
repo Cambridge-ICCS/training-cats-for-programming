@@ -2,15 +2,26 @@ from typing import TypeVar, Callable
 A = TypeVar('A')
 B = TypeVar('B')
 
-# list : Type -> Type
+# List are functors, with:
+#   - object mapping:
+#      list : Type -> Type
+#    - morphism mapping:
+#       that maps an A -> B function
+#        to a list(A) -> list(B) function
+#      provided by the following function:
 
-# Apply a function to every element in a list
-def fmap(f : Callable[[A], B], xs : list[A]) -> list[B]:
+def fmap(f : Callable[[A], B]) -> Callable[[list[A]], list[B]]:
+  # Apply a function to every element in a list
+  return (lambda xs: list(map(f, xs)))
+
+# Alternate version with fmap as a function of arity 2
+def fmapAlt(f : Callable[[A], B], xs : list[A]) -> list[B]:
+  # Apply a function to every element in a list
   return list(map(f, xs))
+  # Alternate implementation
   # return [f(x) for x in xs]
 
-def fmapAlt(f : Callable[[A], B]) -> Callable[[list[A]], list[B]]:
-  return (lambda xs: list(map(f, xs)))
+# Numypy arrays are also functos
 
 import numpy as np
 import numpy.typing as npt
