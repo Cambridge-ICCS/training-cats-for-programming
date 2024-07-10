@@ -20,6 +20,7 @@ The repository contains a number of examples that are then guided through via sl
 - [src/category.py] - The analogy of a category of Python types as objects and functions as morphisms;
 - [src/functor.py] - Analogy of lists and arrays as functors
 - [src/nat_trans.py] - Examples of natural transformations on lists.
+- [src/comonad.py] - Analogy of comonads for arrays
 
 Alongside these files are tests based on the expected axioms
 from the category theory structures being used as analogies:
