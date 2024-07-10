@@ -5,7 +5,6 @@
 # Training material for 'What can abstract mathematics tell us about programming climate models?'
 
 ![GitHub](https://img.shields.io/github/license/Cambridge-ICCS/training-cats-for-programming)
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This is a short training session that gives an introduction
 to basic concepts in [category theory](https://en.wikipedia.org/wiki/Category_theory) and how they can be used to structure common
