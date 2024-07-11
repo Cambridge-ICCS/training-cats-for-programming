@@ -4,15 +4,15 @@ import category
 
 # Test fmap's behaviour on identity functions
 def test_identity():
-  assert functor.fmap(category.id, [1, 2, 3]) == category.id([1, 2, 3])
-  assert functor.fmap(category.id, []) == category.id([])
+  assert functor.fmap(category.id)([1, 2, 3]) == category.id([1, 2, 3])
+  assert functor.fmap(category.id)([]) == category.id([])
 
 # Test fmap's functor composition property
 def test_composition():
   f = lambda x: x + 1
   g = lambda x: x * 2
-  lhs = functor.fmap(category.compose(f, g), [1, 2, 3])
-  rhs = functor.fmap(g, functor.fmap(f, [1, 2, 3]))
+  lhs = functor.fmap(category.compose(f, g))([1, 2, 3])
+  rhs = functor.fmap(g)(functor.fmap(f)([1, 2, 3]))
   assert lhs == rhs
 
 ####################
