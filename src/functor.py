@@ -1,18 +1,21 @@
 from typing import TypeVar, Callable
-A = TypeVar('A')
-B = TypeVar('B')
 
 # List are functors, with:
 #   - object mapping:
 #      list : Type -> Type
+
+A = TypeVar('A')
+B = TypeVar('B')
+
 #    - morphism mapping:
-#       that maps an A -> B function
-#        to a list(A) -> list(B) function
+#        lift an   A -> B             function
+#        to   a    list(A) -> list(B) function
 #      provided by the following function:
 
 def fmap(f : Callable[[A], B]) -> Callable[[list[A]], list[B]]:
   # Apply a function to every element in a list
-  return (lambda xs: list(map(f, xs)))
+  return (lambda xs : list(map(f, xs)))
+
 
 # Alternate version with fmap as a function of arity 2
 def fmapAlt(f : Callable[[A], B], xs : list[A]) -> list[B]:
