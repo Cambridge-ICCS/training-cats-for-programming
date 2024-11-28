@@ -1,6 +1,6 @@
 <img src="https://plas4sci.github.io/assets/images/iccs-logo.jpg"  width="355" align="left">
 
-<br><br><br><br><br>
+<br><br>
 
 # Training material for 'What can abstract mathematics tell us about programming climate models?'
 
